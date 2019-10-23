@@ -94,12 +94,12 @@ Resources:
                 res = False
                 resp = "Unknown operation: " + event['RequestType']
           
-            responseData = {}
-            responseData['Reason'] = reason
-            if res:
-              cfnresponse.send(event, context, cfnresponse.SUCCESS, responseData, provider_arn)
-            else:
-              cfnresponse.send(event, context, cfnresponse.FAILED, responseData, provider_arn)
+              responseData = {}
+              responseData['Reason'] = reason
+              if res:
+                cfnresponse.send(event, context, cfnresponse.SUCCESS, responseData, provider_arn)
+              else:
+                cfnresponse.send(event, context, cfnresponse.FAILED, responseData, provider_arn)
 
   LambdaExecutionRole:
     Type: AWS::IAM::Role
